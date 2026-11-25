@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>蝕刻玻璃杯：點解會變霧？ / Why does an etched glass cup look frosty?</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="banner" id="extBanner">延伸學習／非中一必須學習成果</div>
+      <div class="top-actions">
+        <button type="button" class="secondary" id="langBtn">English</button>
+        <button type="button" class="secondary hidden" id="notesBtn">教師說明</button>
+      </div>
+    </header>
+    <div class="safety" id="safetyBar" role="note"></div>
+
+    <section class="screen panel" id="screenA">
+      <h1 id="titleA" tabindex="-1">蝕刻玻璃杯：點解會變霧？</h1>
+      <p id="leadA"></p>
+      <p id="pickMode"></p>
+      <div class="mode-pick">
+        <button type="button" class="mode-card" id="btnTeacher" aria-pressed="false">
+          <strong id="modeTeacherLabel">教師示範</strong>
+          <small id="modeTeacherHint"></small>
+        </button>
+        <button type="button" class="mode-card" id="btnStudent" aria-pressed="false">
+          <strong id="modeStudentLabel">學生自學</strong>
+          <small id="modeStudentHint"></small>
+        </button>
+      </div>
+      <div class="nav">
+        <button type="button" id="btnStart" disabled>開始</button>
+        <span class="steps"></span>
+      </div>
+    </section>
+
+    <section class="screen panel" id="screenB">
+      <h2 id="bTitle" tabindex="-1"></h2>
+      <div class="compare">
+        <figure>
+          <svg class="cup-svg" id="cupClear" viewBox="0 0 160 200" role="img" aria-labelledby="capClear"></svg>
+          <figcaption id="capClear"></figcaption>
+        </figure>
+        <figure>
+          <svg class="cup-svg" id="cupEtched" viewBox="0 0 160 200" role="img" aria-labelledby="capEtched"></svg>
+          <figcaption id="capEtched"></figcaption>
+        </figure>
+      </div>
+      <div class="nav">
+        <button type="button" class="secondary" data-nav="back" data-go="A">上一頁</button>
+        <button type="button" data-nav="next" data-go="C">下一頁</button>
+        <span class="steps"></span>
+      </div>
+    </section>
+
+    <section class="screen panel" id="screenC">
+      <h2 id="cTitle" tabindex="-1"></h2>
+      <div class="surface-wrap">
+        <canvas id="surfaceCanvas" width="640" height="280" aria-label="表面由平滑變成粗糙的抽象動畫"></canvas>
+        <p id="cCap" class="sim-caption"></p>
+      </div>
+      <p id="cNote"></p>
+      <div class="nav">
+        <button type="button" class="secondary" data-nav="back" data-go="B">上一頁</button>
+        <button type="button" class="secondary" id="btnReplay">重播動畫</button>
+        <button type="button" data-nav="next" data-go="D">下一頁</button>
+        <span class="steps"></span>
+      </div>
+    </section>
+
+    <section class="screen panel" id="screenD">
+      <h2 id="dTitle" tabindex="-1"></h2>
+      <p class="legend">
+        <span><i class="swatch thick"></i><span id="legIn"></span></span>
+        <span><i class="swatch"></i><span id="legRef"></span></span>
+        <span><i class="swatch dash"></i><span id="legTr"></span></span>
+      </p>
+      <div class="sim-grid">
+        <figure>
+          <canvas id="simSmooth" width="480" height="250" aria-labelledby="capSmooth"></canvas>
+          <figcaption id="capSmooth" class="sim-caption"></figcaption>
+          <p id="seeSmooth"></p>
+        </figure>
+        <figure>
+          <canvas id="simRough" width="480" height="250" aria-labelledby="capRough"></canvas>
+          <figcaption id="capRough" class="sim-caption"></figcaption>
+          <p id="seeRough"></p>
+        </figure>
+      </div>
+      <div class="controls">
+        <button type="button" id="btnFire">射出光線</button>
+        <label><span id="labRough"></span>
+          <input id="roughRange" type="range" min="15" max="100" value="70" aria-valuemin="15" aria-valuemax="100">
+        </label>
+        <button type="button" class="secondary" id="btnReset">重設</button>
+        <span id="teacherTools" class="hidden">
+          <button type="button" class="secondary" id="btnHints">隱藏提示</button>
+        </span>
+      </div>
+      <div class="notes" id="hintBlock">
+        <p id="dNote1"></p>
+        <p id="dNote2"></p>
+        <p id="dNote3"></p>
+      </div>
+      <div class="nav">
+        <button type="button" class="secondary" data-nav="back" data-go="C">上一頁</button>
+        <button type="button" data-nav="next" data-go="E">下一頁</button>
+        <span class="steps"></span>
+      </div>
+    </section>
+
+    <section class="screen panel" id="screenE">
+      <h2 id="eTitle" tabindex="-1"></h2>
+      <p id="eBody"></p>
+      <div class="compare">
+        <figure>
+          <svg class="cup-svg" id="cupClear2" viewBox="0 0 160 200" role="img" aria-labelledby="capClear"></svg>
+        </figure>
+        <figure>
+          <svg class="cup-svg" id="cupEtched2" viewBox="0 0 160 200" role="img" aria-labelledby="capEtched"></svg>
+        </figure>
+      </div>
+      <div class="nav">
+        <button type="button" class="secondary" data-nav="back" data-go="D">上一頁</button>
+        <button type="button" data-nav="next" data-go="F">下一頁</button>
+        <span class="steps"></span>
+      </div>
+    </section>
+
+    <section class="screen panel" id="screenF">
+      <h2 id="fTitle" tabindex="-1"></h2>
+      <p id="fLead"></p>
+      <p><span id="qMeta"></span> <span class="tag hidden" id="extTag"></span></p>
+      <p class="question" id="qText"></p>
+      <div class="options" id="options" role="group"></div>
+      <div id="feedback" class="feedback hidden" role="status"></div>
+      <div class="nav">
+        <button type="button" class="secondary" id="qBack" data-nav="back" data-go="E">上一頁</button>
+        <button type="button" id="btnCheck">查看回饋</button>
+        <button type="button" class="secondary hidden" id="btnRetryQ">重做本題</button>
+        <button type="button" id="qNext" data-nav="next" disabled>下一頁</button>
+        <span class="steps"></span>
+      </div>
+    </section>
+
+    <section class="screen panel" id="screenG">
+      <h2 id="gTitle" tabindex="-1"></h2>
+      <p id="gBody"></p>
+      <div class="nav">
+        <button type="button" class="secondary" id="btnBackSim">返回模擬</button>
+        <button type="button" class="secondary" id="btnRetryAll">重做題目</button>
+        <button type="button" id="btnRestart">返回開始</button>
+        <span class="steps"></span>
+      </div>
+    </section>
+
+    <section class="panel hidden" id="notesPanel">
+      <h2 id="notesTitle">教師說明</h2>
+      <div lang="zh-HK">
+        <p><strong>課程位置：</strong>本應用屬延伸學習，不是中一單元一至六必須成果；框架是《科學教育學習領域課程指引補充文件：科學（中一至中三）》（2017）。不要當作已涵蓋中三單元十四反射定律，或中三單元十三化學變化定義的完整教學。</p>
+        <p><strong>畫法同用語（已核準）：</strong>「漫反射」只用來指反射出去的光線向多方散開；穿過時被打散只說「把光線打散」。玻璃畫成薄片；穿過的光線較齊、大致向前。學生畫面不標角度，不教反射定律或折射定律。不用「較光亮／較暗」對比。</p>
+        <p><strong>安全：</strong>真實玻璃蝕刻常用含氟化物的試劑（例如氫氟酸或相關氟化氫鹽類），腐蝕性極高，可造成嚴重化學燒傷；皮膚接觸、吸入或濺入眼睛均極危險，且傷害可能延遲出現。本應用不能代替按安全守則安排的真實實驗，也不是實驗方案或 SBA。不可在課室或家中仿做。不要把藥劑名稱當用料或步驟。若只展示已做好的蝕刻杯，只准觀看，學生不可接觸蝕刻藥劑。</p>
+        <p><strong>課堂建議：</strong>先現象、後模擬、再題目。第 4 題（不可仿做）建議必做。題目不計正式分數，不產生可呈交習作。課時尚未指定，以上只是用法建議。</p>
+      </div>
+      <p><button type="button" class="secondary" id="btnCloseNotes">關閉教師說明</button> 完整說明亦見資料夾內的 <code>教師說明.md</code>。</p>
+    </section>
+  </div>
+  <script src="assets/app.js"></script>
+</body>
+</html>
