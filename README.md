@@ -1,6 +1,6 @@
 # 蝕刻玻璃杯：點解會變霧？
 
-靜態教學網頁（初中科學延伸學習）。公開網址：https://johnnycck1990.github.io/Science/
+靜態教學網頁（初中科學延伸學習）。公開網址：https://johnnychongedu.github.io/Science/
 
 用瀏覽器打開本儲存庫根目錄的 `index.html`（須一併保留 `assets/`）。教師說明見 `教師說明.md`，教學設計見 `教學設計.md`，本機打開方法見 `本機打開說明.txt`。
 

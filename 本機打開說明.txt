@@ -22,14 +22,14 @@
 用新檔案包整份覆蓋本資料夾（保留資料夾結構），再重新打開 index.html。不必清除瀏覽器也能用；若畫面異常，重新整理一次即可。
 
 四、發布同托管
-公開網址（GitHub Pages）：https://johnnycck1990.github.io/Science/
-儲存庫：https://github.com/johnnycck1990/Science
+公開網址（GitHub Pages）：https://johnnychongedu.github.io/Science/
+儲存庫：https://github.com/johnnychongedu/Science
 
 檔案不含學生個人資料，亦不要把學生姓名或名冊填進本應用。學校網絡有時會封鎖 GitHub，課堂請同時保留本機檔案包或校本／共用資料夾作為備選，用上面「本機打開」方法即可。
 
 更新公開網頁：用新版本覆蓋儲存庫根目錄同一批檔案（index.html、assets/、教師說明.md、教學設計.md、本機打開說明.txt），推送後稍等 Pages 更新；或告訴「WEB APP 前端實作」代為更新。本機版本則用新檔案包整份覆蓋本資料夾。
 
-若日後更改 GitHub 用戶名稱，公開網址會變成 https://新名稱.github.io/Science/，屆時請更新本說明。
+舊用戶名稱 johnnycck1990 的 Pages 網址不會自動轉到新網址，請使用上面的公開網址。
 
 五、檔案清單
 - index.html：主頁（請打開此檔）
